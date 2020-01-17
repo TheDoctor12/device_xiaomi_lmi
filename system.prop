@@ -63,6 +63,9 @@ ro.sf.blurs_are_expensive=1
 # FP
 ro.fingerprint.cleanup.unused=false
 
+# Google keyboard
+ro.com.google.ime.height_ratio=1.1
+
 # Graphics
 debug.sf.disable_backpressure=1
 debug.sf.latch_unsignaled=1
