@@ -13,6 +13,9 @@ vendor.bluetooth.soc=cherokee
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.xiaomi.cameratest,com.xiaomi.factory.mmi,com.android.camera
 camera.disable_zsl_mode=true
 
+# Charger
+ro.charger.enable_suspend=true
+
 # CNE and DPM
 persist.vendor.cne.feature=1
 persist.vendor.dpm.feature=1
