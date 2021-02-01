@@ -18,9 +18,6 @@
     <!-- Bottom margin size when fingerprint in display is active -->
     <dimen name="keyguard_indication_margin_bottom_fingerprint_in_display">130dp</dimen>
 
-    <!-- the padding on the start of the statusbar -->
-    <dimen name="status_bar_padding_start">16dp</dimen>
-
-    <!-- the padding on the end of the statusbar -->
-    <dimen name="status_bar_padding_end">14dp</dimen>
+    <!-- for 20dp of padding at 2.75px/dp at default density -->
+    <dimen name="rounded_corner_content_padding">55px</dimen>
 </resources>
