@@ -156,10 +156,6 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lmi
 
-# overlay-remove
-PRODUCT_PACKAGES += \
-    FrameworksResTarget
-
 # Perf
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.0
