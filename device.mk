@@ -53,10 +53,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libldacBT_bco
 
-# Camera
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.camera.device@1.0
-
 # Configstore
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.capabilityconfigstore@1.0
