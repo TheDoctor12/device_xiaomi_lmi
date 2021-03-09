@@ -20,6 +20,9 @@ $(call inherit-product, vendor/xiaomi/lmi/lmi-vendor.mk)
 
 PRODUCT_CHARACTERISTICS := nosdcard
 
+# MIUI Camera
+$(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)
+
 PRODUCT_BUILD_SUPER_PARTITION := false
 BOARD_BUILD_PRODUCT_IMAGE := true
 PRODUCT_SHIPPING_API_LEVEL := 29
