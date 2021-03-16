@@ -60,36 +60,36 @@ public class PopupCameraService extends Service implements Handler.Callback {
 
     private CameraManager.AvailabilityCallback availabilityCallback =
             new CameraManager.AvailabilityCallback() {
-        @Override
-        public void onCameraAvailable(@NonNull String cameraId) {
-            super.onCameraAvailable(cameraId);
-            if (cameraId.equals(Constants.FRONT_CAMERA_ID)) {
-                mClosedEvent = SystemClock.elapsedRealtime();
-                if (SystemClock.elapsedRealtime() - mOpenEvent
-                        < Constants.CAMERA_EVENT_DELAY_TIME && mHandler.hasMessages(
-                        Constants.MSG_CAMERA_OPEN)) {
-                    mHandler.removeMessages(Constants.MSG_CAMERA_OPEN);
+                @Override
+                public void onCameraAvailable(@NonNull String cameraId) {
+                    super.onCameraAvailable(cameraId);
+                    if (cameraId.equals(Constants.FRONT_CAMERA_ID)) {
+                        mClosedEvent = SystemClock.elapsedRealtime();
+                        if (SystemClock.elapsedRealtime() - mOpenEvent
+                                < Constants.CAMERA_EVENT_DELAY_TIME && mHandler.hasMessages(
+                                Constants.MSG_CAMERA_OPEN)) {
+                            mHandler.removeMessages(Constants.MSG_CAMERA_OPEN);
+                        }
+                        mHandler.sendEmptyMessageDelayed(Constants.MSG_CAMERA_CLOSED,
+                                Constants.CAMERA_EVENT_DELAY_TIME);
+                    }
                 }
-                mHandler.sendEmptyMessageDelayed(Constants.MSG_CAMERA_CLOSED,
-                        Constants.CAMERA_EVENT_DELAY_TIME);
-            }
-        }
 
-        @Override
-        public void onCameraUnavailable(@NonNull String cameraId) {
-            super.onCameraAvailable(cameraId);
-            if (cameraId.equals(Constants.FRONT_CAMERA_ID)) {
-                mOpenEvent = SystemClock.elapsedRealtime();
-                if (SystemClock.elapsedRealtime() - mClosedEvent
-                        < Constants.CAMERA_EVENT_DELAY_TIME && mHandler.hasMessages(
-                        Constants.MSG_CAMERA_CLOSED)) {
-                    mHandler.removeMessages(Constants.MSG_CAMERA_CLOSED);
+                @Override
+                public void onCameraUnavailable(@NonNull String cameraId) {
+                    super.onCameraAvailable(cameraId);
+                    if (cameraId.equals(Constants.FRONT_CAMERA_ID)) {
+                        mOpenEvent = SystemClock.elapsedRealtime();
+                        if (SystemClock.elapsedRealtime() - mClosedEvent
+                                < Constants.CAMERA_EVENT_DELAY_TIME && mHandler.hasMessages(
+                                Constants.MSG_CAMERA_CLOSED)) {
+                            mHandler.removeMessages(Constants.MSG_CAMERA_CLOSED);
+                        }
+                        mHandler.sendEmptyMessageDelayed(Constants.MSG_CAMERA_OPEN,
+                                Constants.CAMERA_EVENT_DELAY_TIME);
+                    }
                 }
-                mHandler.sendEmptyMessageDelayed(Constants.MSG_CAMERA_OPEN,
-                        Constants.CAMERA_EVENT_DELAY_TIME);
-            }
-        }
-    };
+            };
 
     private SensorEventListener mFreeFallListener = new SensorEventListener() {
         @Override
@@ -142,23 +142,9 @@ public class PopupCameraService extends Service implements Handler.Callback {
         }
     }
 
-    private void onBootCompleted(){
-        try {
-            int status = mMotor.getMotorStatus();
-            if (status == Constants.MOTOR_STATUS_POPUP ||
-                    status == Constants.MOTOR_STATUS_TAKEBACK_JAM) {
-                if (DEBUG) Log.d(TAG, "Opened front camera detected, taking back");
-                mMotor.takebackMotor(1);
-            }
-        } catch (RemoteException e) {
-            // Do nothing
-        }
-    }
-
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         if (DEBUG) Log.d(TAG, "Starting service");
-        onBootCompleted();
         return START_STICKY;
     }
 
