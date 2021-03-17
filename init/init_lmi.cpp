@@ -54,7 +54,7 @@ void vendor_load_properties() {
     std::string product = GetProperty("ro.boot.product.hardware.sku", "");
 
     if (region.find("CN") != std::string::npos) {
-        property_override("ro.product.brand", "Xiaomi");
+        property_override("ro.product.brand", "Redmi");
         if (product.find("pro") != std::string::npos) {
             property_override("ro.product.model", "Redmi K30 Pro Zoom Edition");
             property_override("ro.product.device", "lmipro");
