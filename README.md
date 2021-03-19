@@ -1,6 +1,4 @@
-Copyright (C) 2020 - Carlos Ayrton López Arroyo
-
-Device configuration for Pocophone f2 pro (lmi)
+POCO F2 PRO (lmi)
 
 ## Device specifications
 
@@ -11,13 +9,10 @@ Chipset | Qualcomm® Snapdragon 865
 GPU     | Adreno 650
 ROM     | 128/256GB
 RAM     | 6/8GB
-Android | 10.0
 Battery | 4700 mAh
 Display | 2400x1080 pixels, 6.67 inch, 60Hz framerate
 Rear Camera  | 64/13/5/2MP
 Front Camera | 20MP
 
 ## Device picture
-![Xiaomi Mi 9T/Redmi K20](https://i01.appmifile.com/webfile/globalimg/products/pc/poco-f2-pro/phone1.png "Poco F2 Pro front")
-![Xiaomi Mi 9T/Redmi K20](https://i01.appmifile.com/webfile/globalimg/products/pc/poco-f2-pro/phone2.png "Poco F2 Pro back")
-
+![Xiaomi Mi 9T/Redmi K20](https://www.neontelecom.es/content/images/thumbs/5f6351893878c5367caf5b4b_poco-f2-pro-6128gb-electric-purple.jpeg)
