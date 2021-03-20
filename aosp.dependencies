@@ -1,0 +1,8 @@
+[
+  { 
+    "remote"       : "github",
+    "repository"   : "TheDoctor12/vendor_xiaomi_lmi",
+    "target_path"  : "vendor/xiaomi/lmi",
+    "branch"       : "11"
+  }
+]
