@@ -41,7 +41,7 @@ void vendor_load_properties() {
     std::string product = GetProperty("ro.boot.product.hardware.sku", "");
 
     property_override("ro.build.description", "lmi-user 11 RKQ1.200826.002 V12.2.5.0.RJKMIXM release-keys");
-    property_override("ro.build.fingerprint", "Redmi/lmi/lmi:11/RKQ1.200826.002/V12.2.5.0.RJKMIXM:user/release-keys");
+    property_override("ro.build.fingerprint", "POCO/lmi_global/lmi:11/RKQ1.200826.002/V12.2.5.0.RJKMIXM:user/release-keys");
 
     if (region.find("CN") != std::string::npos) {
         property_override("ro.product.brand", "Redmi");
