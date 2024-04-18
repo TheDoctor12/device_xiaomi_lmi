@@ -13,7 +13,7 @@ DEVICE_PATH := device/xiaomi/lmi
 TARGET_SCREEN_DENSITY := 440
 
 # Kernel
-TARGET_KERNEL_CONFIG += vendor/xiaomi/lmi.config
+TARGET_KERNEL_CONFIG := lmi_defconfig
 
 # OTA assert
 TARGET_OTA_ASSERT_DEVICE := lmi
