@@ -23,4 +23,4 @@ PRODUCT_MODEL := POCO F2 Pro
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildFingerprint=Redmi/lmi/lmi:12/RKQ1.211001.001/V14.0.1.0.SJKMIXM:user/release-keys
+    BuildFingerprint=google/husky_beta/husky:16/BP41.250822.010/14082742:user/release-keys
